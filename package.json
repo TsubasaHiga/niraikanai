@@ -6,10 +6,44 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint:scripts": "eslint --ext .ts src/",
+    "lint:styles": "stylelint \"src/**/*.scss\"",
+    "fix:scripts": "yarn lint:scripts --fix",
+    "fix:styles": "yarn lint:styles --fix",
+    "format": "prettier --write --ignore-path .gitignore './**/*.{js,ts,json}'",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "yarn lint:scripts",
+      "git add"
+    ],
+    "*.scss": [
+      "yarn lint:styles",
+      "git add"
+    ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.38.0",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
     "sass": "^1.55.0",
+    "stylelint": "^14.12.1",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.3.0",
     "typescript": "^4.6.4",
     "vite": "^3.1.0"
   }
