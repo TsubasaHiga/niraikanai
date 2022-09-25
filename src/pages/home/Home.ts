@@ -1,7 +1,7 @@
-import './style.scss'
+import './Home.modules.scss'
 
-import { setupCounter } from './counter'
-import typescriptLogo from './typescript.svg'
+import typescriptLogo from '~/images/typescript.svg'
+import { setupCounter } from '~/modules/counter'
 
 const appElement = document.querySelector<HTMLDivElement>('#app')
 if (appElement) {

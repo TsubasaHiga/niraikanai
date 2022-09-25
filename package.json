@@ -34,6 +34,7 @@
     ]
   },
   "devDependencies": {
+    "@macropygia/vite-plugin-glob-input": "^0.0.15",
     "@types/archiver": "^5.3.1",
     "@types/node": "^18.7.19",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
