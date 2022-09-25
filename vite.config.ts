@@ -28,6 +28,9 @@ const config: UserConfig = {
     outDir: '../dist',
     emptyOutDir: true
   },
+  esbuild: {
+    jsxFactory: 'h'
+  },
   resolve: {
     alias: {
       '~/': path.join(__dirname, root)

@@ -19,6 +19,8 @@
     "skipLibCheck": true,
     "incremental": true,
     "baseUrl": "./src",
+    "jsx": "react",
+    "jsxFactory": "h",
     "paths": {
       "~/*": ["./*"]
     }
