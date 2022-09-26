@@ -1,3 +1,6 @@
-import './Example.modules.scss'
+import '~/commonScripts'
 
-console.log('example')
+import ExampleContent from '~/components/ExampleContent/ExampleContent'
+
+const appElement = document.querySelector<HTMLDivElement>('#app')
+appElement?.appendChild(ExampleContent())

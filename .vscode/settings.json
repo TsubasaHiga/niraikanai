@@ -13,5 +13,5 @@
   },
   "cSpell.ignoreRegExpList": ["[０-９Ａ-Ｚａ-ｚぁ-んァ-ヶ亜-熙纊-黑]+"],
   "cSpell.enabledLanguageIds": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
-  "cSpell.words": ["esbuild", "macropygia"]
+  "cSpell.words": ["cssnano", "esbuild", "gsap", "macropygia", "mqpacker", "NIRAIKANAI", "smacss"]
 }

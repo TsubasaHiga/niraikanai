@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>example</title>
+    {{> _head }}
   </head>
 
   <body>
-    <a href="/">page home</a>
-    <div id="app"></div>
+    {{> _document-top }}
+    <main class="l-main">
+      {{> _header }}
+
+      <div class="l-container">
+        <div id="app"></div>
+        {{> _breadcrumbs }}
+        {{> _footer }}
+      </div>
+
+    </main>
     <script type="module" src="../pages/example/Example.ts"></script>
+    {{> _document-bottom }}
   </body>
 
 </html>

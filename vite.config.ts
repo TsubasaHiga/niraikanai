@@ -1,7 +1,10 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import path from 'path'
-import { defineConfig, UserConfig } from 'vite'
+import { defineConfig, UserConfig, splitVendorChunkPlugin } from 'vite'
 import vitePluginGlobInput from '@macropygia/vite-plugin-glob-input'
+import handlebars from 'vite-plugin-handlebars'
+import { commonConfig } from './src/siteConfig'
+import { GetPageData } from './src/pageData'
+import helpers from 'handlebars-helpers'
 
 // isProduction
 const isProduction = process.env.NODE_ENV === 'production'
@@ -11,6 +14,12 @@ const root = 'src/'
 
 // publicDir
 const publicDir = '../public'
+
+// handlebarsContext
+const handlebarsContext = {
+  isProduction: isProduction,
+  ...commonConfig
+}
 
 // https://vitejs.dev/config/
 const config: UserConfig = {
@@ -37,8 +46,32 @@ const config: UserConfig = {
     }
   },
   plugins: [
+    splitVendorChunkPlugin(),
     vitePluginGlobInput({
-      patterns: path.resolve(__dirname, root, '**/*.html')
+      patterns: [
+        path.resolve(__dirname, root, '**/*.html'),
+        // src/html-partialsは除く
+        `!${path.resolve(__dirname, root, 'html-partials/**/*.html')}`
+      ]
+    }),
+    // @ts-ignore
+    handlebars({
+      partialDirectory: path.resolve(__dirname, './src/html-partials'),
+      helpers: {
+        // @ts-ignore
+        math: helpers.math(),
+        // @ts-ignore
+        comparison: helpers.comparison()
+      },
+      context: (pagePath) => {
+        return {
+          // ページ固有のデータ
+          ...GetPageData().find((page) => page.path === pagePath),
+
+          // 共通のデータ
+          ...handlebarsContext
+        }
+      }
     })
   ]
 }

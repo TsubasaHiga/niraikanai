@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+@use "sass:map";
+@use "sass:math";
+@use "../Foundation/variables" as *;
+@use "../Foundation/mixin" as *;
+@use "../Foundation/functions" as *;
+
+.l-header {
+  position: relative;
+  z-index: 9;
+
+  &__inner {
+    align-items: center;
+    background-color: #fff;
+    display: flex;
+    height: map.get($map: $headerH, $key: lg);
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 map.get($map: $space, $key: lg);
+    position: relative;
+    width: 100%;
+  }
+
+  &__logo {
+
+    h1,
+    p {
+      @include fz(26, 26, 700);
+    }
+  }
+
+  @include mqw-down {
+
+    &__inner {
+      height: map.get($map: $headerH, $key: sm);
+      padding: 0 map.get($map: $space, $key: sm);
+    }
+  }
+}

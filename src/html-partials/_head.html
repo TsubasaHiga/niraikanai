@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>{{title}}｜{{siteName}}</title>
+<meta name="description" content="{{description}}">
+<meta name="author" content="{{author}}">
+
+<meta property="og:locale" content="ja_JP">
+<meta property="og:type" content="{{ogType}}">
+<meta property="og:title" content="{{title}}｜{{siteName}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{siteDomain}}{{path}}">
+<meta property="og:siteName" content="{{siteName}}">
+<meta property="og:image" content="/ogpimg.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="{{twitterSite}}">
+<meta name="twitter:creator" content="{{twitterCreator}}">
+
+<meta name="theme-color" content="{{themeColor}}">
+<link rel="canonical" href="{{siteDomain}}{{path}}">
+<link rel="shortcut icon" href="/vite.svg">
+
+{{#if isProduction}}
+  <link rel="preload" as="style" href="{{resolve-from-root 'styles/style.scss'}}">
+{{/if}}
+<link rel="stylesheet" href="{{resolve-from-root 'styles/style.scss'}}">
+
+{{#if webFontUrl}}
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="{{webFontUrl}}" />
+  <link rel="stylesheet" href="{{webFontUrl}}" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="{{webFontUrl}}" />
+  </noscript>
+{{/if}}
+
+{{> _analytics-head }}
