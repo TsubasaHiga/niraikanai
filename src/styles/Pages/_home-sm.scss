@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+@use "sass:map";
+@use "sass:math";
+@use "../Foundation/variables" as *;
+@use "../Foundation/mixin" as *;
+@use "../Foundation/functions" as *;
+
+@include mqw-down {
+
+  .home {
+    /* stylelint-disable */
+    // 使用する最に stylelint-disableコメント削除
+    /* stylelint-enable */
+  }
+}

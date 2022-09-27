@@ -1,0 +1,103 @@
+{
+  "name": "niraikanai",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "author": "HigaTsubasa",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TsubasaHiga/niraikanai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TsubasaHiga/niraikanai/issues"
+  },
+  "homepage": "https://github.com/TsubasaHiga/niraikanai#readme",
+  "keywords": [
+    "Vanilla-JS",
+    "Vite",
+    "MPA",
+    "Boilerplate"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "archive": "tsc && vite build && yarn node --loader ts-node/esm utils/genDistArchive.ts",
+    "lint:scripts": "eslint --ext .ts src/",
+    "lint:styles": "stylelint \"src/**/*.scss\"",
+    "fix:scripts": "yarn lint:scripts --fix",
+    "fix:styles": "yarn lint:styles --fix",
+    "format": "prettier --write --ignore-path .gitignore './**/*.{js,ts,json}'",
+    "prepare": "husky install"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "browserslist": [
+    "> 0.5% in JP",
+    "not IE 11"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "yarn lint:scripts",
+      "git add"
+    ],
+    "*.scss": [
+      "yarn lint:styles",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@macropygia/vite-plugin-glob-input": "^0.0.15",
+    "@types/archiver": "^5.3.1",
+    "@types/handlebars-helpers": "^0.5.3",
+    "@types/is-touch-device": "^1.0.0",
+    "@types/node": "^18.7.19",
+    "@types/throttle-debounce": "^5.0.0",
+    "@types/ua-parser-js": "^0.7.36",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.38.0",
+    "archiver": "^5.3.1",
+    "autoprefixer": "^10.4.12",
+    "css-declaration-sorter": "^6.3.1",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^5.1.13",
+    "dayjs": "^1.11.5",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "fs": "^0.0.1-security",
+    "handlebars-helpers": "^0.10.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "path": "^0.12.7",
+    "postcss": "^8.4.16",
+    "prettier": "^2.7.1",
+    "sass": "^1.55.0",
+    "stylelint": "^14.12.1",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.3.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0",
+    "vite-plugin-handlebars": "^1.6.0",
+    "vite-plugin-html": "^3.2.0"
+  },
+  "dependencies": {
+    "auto-bind": "^5.0.1",
+    "gsap": "^3.11.1",
+    "is-touch-device": "^1.0.1",
+    "ress": "^5.0.2",
+    "throttle-debounce": "^5.0.0",
+    "tsx-dom": "^2.0.0",
+    "ua-parser-js": "^1.0.2"
+  }
+}

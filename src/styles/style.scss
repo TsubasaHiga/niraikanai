@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+// コーディング規約
+// 1. ファイル名に接頭辞が付いている場合、必ずclassNameにも接頭辞を付与します。
+// 2. ファイル名に接頭辞が付いていない場合、classNameには接頭辞を付与しません。
+// 3. PCレイアウト・SPレイアウトでファイルを分ける場合、ファイル末尾に`-lg or -sm`等の文字列を含めます。
+
+// plugins
+@use "ress";
+
+// Foundation
+@use "./Foundation/functions";
+@use "./Foundation/base";
+
+// Layouts
+@use "./Layouts/l-base";
+@use "./Layouts/l-footer";
+@use "./Layouts/l-header";
+
+// Components
+@use "./Components/c-button";
+@use "./Components/c-breadcrumbs";
+@use "./Components/c-hmb";
+@use "./Components/c-nav";
+@use "./Components/c-details-lg";
+@use "./Components/c-details-sm";
+
+// Pages（注意：接頭辞付けません）
+@use "./Pages/home-lg";
+@use "./Pages/home-sm";
