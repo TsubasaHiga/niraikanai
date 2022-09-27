@@ -1,0 +1,104 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "function",
+          "if",
+          "else",
+          "each",
+          "include",
+          "mixin",
+          "for",
+          "extend",
+          "return",
+          "use",
+          "forward"
+        ]
+      }
+    ],
+    "at-rule-no-vendor-prefix": true,
+    "color-hex-case": "lower",
+    "color-hex-length": "short",
+    "color-named": "never",
+    "comment-empty-line-before": "never",
+    "comment-whitespace-inside": "always",
+    "declaration-colon-space-after": "always",
+    "declaration-colon-space-before": "never",
+    "font-weight-notation": "numeric",
+    "indentation": 2,
+    "media-feature-colon-space-after": "always",
+    "media-feature-colon-space-before": "never",
+    "media-feature-parentheses-space-inside": "never",
+    "media-feature-range-operator-space-after": "always",
+    "media-feature-range-operator-space-before": "always",
+    "no-descending-specificity": null,
+    "no-duplicate-selectors": true,
+    "number-leading-zero": "never",
+    "order/order": [
+      {
+        "hasBlock": false,
+        "name": "include",
+        "type": "at-rule"
+      },
+      "declarations"
+    ],
+    "order/properties-alphabetical-order": true,
+    "rule-empty-line-before": "always-multi-line",
+    "selector-attribute-brackets-space-inside": "never",
+    "selector-attribute-operator-space-after": "always",
+    "selector-attribute-operator-space-before": "always",
+    "selector-attribute-quotes": "always",
+    "selector-combinator-space-after": "always",
+    "selector-pseudo-class-parentheses-space-inside": "never",
+    "selector-pseudo-element-colon-notation": "single",
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ],
+    "scss/at-else-empty-line-before": null,
+    "scss/at-else-if-parentheses-space-before": null,
+    "scss/at-function-parentheses-space-before": null,
+    "scss/at-function-pattern": null,
+    "scss/at-mixin-argumentless-call-parentheses": null,
+    "scss/at-mixin-parentheses-space-before": null,
+    "scss/at-mixin-pattern": null,
+    "scss/at-rule-conditional-no-parentheses": null,
+    "scss/dollar-variable-colon-space-after": null,
+    "scss/dollar-variable-colon-space-before": null,
+    "scss/dollar-variable-empty-line-before": null,
+    "scss/dollar-variable-pattern": null,
+    "scss/double-slash-comment-empty-line-before": null,
+    "scss/double-slash-comment-whitespace-inside": null,
+    "scss/percent-placeholder-pattern": null,
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": ["after-same-name"],
+        "ignore": ["after-comment", "first-nested"]
+      }
+    ],
+    "media-feature-name-no-vendor-prefix": null,
+    "property-no-vendor-prefix": null,
+    "value-no-vendor-prefix": null,
+    "selector-no-vendor-prefix": null,
+    "scss/no-global-function-names": null,
+    "selector-class-pattern": null,
+    "selector-id-pattern": null,
+    "scss/at-if-closing-brace-newline-after": null,
+    "scss/at-if-closing-brace-space-after": null,
+    "scss/at-extend-no-missing-placeholder": null,
+    "max-line-length": null,
+    "declaration-block-no-redundant-longhand-properties": [
+      true,
+      {
+        "ignoreShorthands": ["/flex/"]
+      }
+    ]
+  }
+}

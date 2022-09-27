@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+@use "sass:map";
+@use "sass:math";
+@use "../Foundation/variables" as *;
+@use "../Foundation/mixin" as *;
+@use "../Foundation/functions" as *;
+
+.l-main {
+  min-height: 100vh;
+}
+
+.l-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 map.get($map: $space, $key: lg);
+  position: relative;
+  width: 100%;
+
+  @include mqw-down {
+    padding: 0 map.get($map: $space, $key: sm);
+  }
+}
+
+.l-mqw-up {
+
+  @include mqw-down {
+    display: none !important;
+  }
+}
+
+.l-mqw-down {
+
+  @include mqw-up {
+    display: none !important;
+  }
+}
+
+.l-mqw-xmd-up {
+
+  @include mqw-down(xmd) {
+    display: none !important;
+  }
+}
+
+.l-mqw-xmd-down {
+
+  @include mqw-up(xmd) {
+    display: none !important;
+  }
+}

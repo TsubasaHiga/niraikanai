@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+@use "../variables" as *;
+@use "./canhover" as *;
+
+@mixin hoverOpacity($opacity: .5, $ms: false, $ease: false) {
+  @include canhover {
+    @if $ease {
+      transition: opacity $ms $ease;
+    }
+
+    @else {
+      transition: opacity $comMS $comES;
+    }
+
+    &:hover {
+      opacity: $opacity;
+    }
+  }
+}

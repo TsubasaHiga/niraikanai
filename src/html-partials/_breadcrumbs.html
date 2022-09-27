@@ -1,0 +1,27 @@
+{{#if hierarchy}}
+  <div class="c-breadcrumbs l-lg" typeof="BreadcrumbList" vocab="https://schema.org/">
+    <div class="c-breadcrumbs__inner">
+      <div class="c-breadcrumbs__list">
+        <div class="c-breadcrumbs__item" property="itemListElement" typeof="ListItem">
+          <a property="item" typeof="WebPage" title="Home" href="/">
+            <span property="name">Home</span>
+          </a>
+          <meta property="position" content="1">
+        </div>
+
+        {{#each hierarchy}}
+          <div class="c-breadcrumbs__item" property="itemListElement" typeof="ListItem">
+            {{#compare @index "<" ../hierarchyRealIndex}}
+              <a property="item" typeof="WebPage" title="{{this.title}}" href="{{../siteDomain}}/{{this.path}}">
+                <span property="name">{{this.title}}</span>
+              </a>
+        {{else}}
+          <span property="name">{{this.title}}</span>
+            {{/compare}}
+            <meta property="position" content='{{plus @index 2}}'>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+{{/if}}
