@@ -1,8 +1,24 @@
 {
   "name": "niraikanai",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "author": "HigaTsubasa",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TsubasaHiga/niraikanai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TsubasaHiga/niraikanai/issues"
+  },
+  "homepage": "https://github.com/TsubasaHiga/niraikanai#readme",
+  "keywords": [
+    "Vanilla-JS",
+    "Vite",
+    "MPA",
+    "Boilerplate"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
