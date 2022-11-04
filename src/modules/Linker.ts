@@ -1,5 +1,8 @@
 import autoBind from 'auto-bind'
 
+/**
+ * '[data-link]'が付与された要素をクリックした際に、リンク遷移を行います
+ */
 class Linker {
   constructor() {
     autoBind(this)

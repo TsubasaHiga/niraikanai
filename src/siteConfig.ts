@@ -1,8 +1,9 @@
-import { CommonConfigType } from '~/types/SiteConfigType'
+import { PageConfigType } from '~/types/SiteConfigType'
 
-export const commonConfig: CommonConfigType = {
-  // site domain
-  siteDomain: 'https://example.com',
+// ページ上で使用する定数関連
+export const siteConfig: PageConfigType = {
+  // site full path
+  sitePath: 'https://example.com',
 
   // site name
   siteName: 'NIRAIKANAI',

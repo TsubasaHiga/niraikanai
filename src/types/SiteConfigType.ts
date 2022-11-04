@@ -1,5 +1,5 @@
-export type CommonConfigType = {
-  siteDomain: string
+export type PageConfigType = {
+  sitePath: string
   siteName: string
   author: string
   twitterSite: string

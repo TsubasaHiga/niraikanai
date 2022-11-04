@@ -7,6 +7,10 @@ type typeOptions = {
   rootMargin: string
   threshold: number
 }
+
+/**
+ * IntersectionObserverを使用して要素が表示領域内に入った際にクラスを付与します
+ */
 class AddAnimationClass {
   elements: NodeListOf<HTMLElement>
   options: typeOptions

@@ -3,5 +3,4 @@
 .vscode
 dist
 node_modules
-vite.config.ts
 postcss.config.cjs

@@ -2,10 +2,12 @@ import autoBind from 'auto-bind'
 import { debounce } from 'throttle-debounce'
 
 import { elements } from '~/const/elements'
+import GetDeviceType from '~/utils/getDeviceType'
+import Pd from '~/utils/preventDefault'
 
-import GetDeviceType from '../utils/getDeviceType'
-import Pd from '../utils/preventDefault'
-
+/**
+ * ハンバーガーメニュー
+ */
 class HmbMenu {
   isActive: boolean
   deviceType: string
@@ -24,13 +26,13 @@ class HmbMenu {
 
     this.hmb?.addEventListener('click', this.switchShowHide, false)
     this.hmbBg?.addEventListener('click', this.switchShowHide, false)
+    document.addEventListener('keydown', this.onKeyDown, false)
     window.addEventListener('resize', debounce(150, this.resize), false)
   }
 
   show(): void {
     this.isActive = true
 
-    elements.NAV.style.visibility = ''
     document.documentElement.classList.add('is-nav-active')
 
     elements.MAIN?.addEventListener('touchmove', Pd, { passive: false })
@@ -50,6 +52,10 @@ class HmbMenu {
     this.isActive ? this.hide() : this.show()
   }
 
+  onKeyDown(e: KeyboardEvent) {
+    if (e.key === 'Escape') this.hide()
+  }
+
   resize(): void {
     if (this.deviceType === GetDeviceType()) {
       return
@@ -57,10 +63,6 @@ class HmbMenu {
 
     this.deviceType = GetDeviceType()
     this.hide()
-
-    if (this.deviceType === 'lg') {
-      elements.NAV.style.visibility = ''
-    }
   }
 }
 
