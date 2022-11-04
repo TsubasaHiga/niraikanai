@@ -1,18 +1,28 @@
 import PageDataType from '~/types/PageDataType'
 
-const pageData: PageDataType[] = [
+export const pageData: PageDataType[] = [
+  // ホームページ
   {
-    path: '/index.html',
+    id: '/index.html',
+    path: '',
+    pageName: 'home',
     title: 'Home',
     description: 'Home',
     ogType: 'website'
   },
+  // exampleページ
   {
-    path: '/example/index.html',
+    id: '/example/index.html',
+    path: 'example/',
+    pageName: 'example',
     title: 'Example',
     description: 'Example',
     ogType: 'website',
     hierarchy: [
+      {
+        title: 'Home Page',
+        path: ''
+      },
       {
         title: 'Example Page',
         path: 'example/'

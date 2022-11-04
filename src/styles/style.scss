@@ -3,7 +3,7 @@
 // コーディング規約
 // 1. ファイル名に接頭辞が付いている場合、必ずclassNameにも接頭辞を付与します。
 // 2. ファイル名に接頭辞が付いていない場合、classNameには接頭辞を付与しません。
-// 3. PCレイアウト・SPレイアウトでファイルを分ける場合、ファイル末尾に`-lg or -sm`等の文字列を含めます。
+// 3. PCレイアウト・SPレイアウトで記述がややこしくなる場合は積極的にファイルを分割し、ファイル名末尾に`-lg or -sm`等の文字列を含めます。
 
 // plugins
 @use "ress";
@@ -18,13 +18,18 @@
 @use "./Layouts/l-header";
 
 // Components
-@use "./Components/c-button";
+@use "./Components/c-btn";
+@use "./Components/c-details";
 @use "./Components/c-breadcrumbs";
 @use "./Components/c-hmb";
 @use "./Components/c-nav";
-@use "./Components/c-details-lg";
-@use "./Components/c-details-sm";
 
-// Pages（注意：接頭辞付けません）
-@use "./Pages/home-lg";
-@use "./Pages/home-sm";
+// Projects（共通で使用されるプロジェクト単位のスタイルを記述します）
+// @use "./Projects/p-example";
+
+// Utilities
+@use "./Utilities/u-plugins";
+
+// Pages（ページ固有のスタイルを主に記述します。注意：接頭辞付けません）
+@use "./Pages/home/lg" as home-lg;
+@use "./Pages/home/sm" as home-sm;

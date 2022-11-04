@@ -3,6 +3,10 @@ import { gsap, Power2 } from 'gsap'
 import { debounce } from 'throttle-debounce'
 
 import BgScrollStop from '../utils/bgScrollStop'
+
+/**
+ * モーダル
+ */
 class Modal {
   isModalOpen: boolean
 

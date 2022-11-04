@@ -1,12 +1,11 @@
 import UAParser from 'ua-parser-js'
 
-import UaType from '../types/UaType'
-import GetTouchSupport from './getTouchSupport'
+import UaType from '~/types/UaType'
+
+import IsTouchSupport from './isTouchSupport'
 
 /**
- * UA情報を<html>タグにdatasetとして追加します
- * 文字列にスペースが付く場合はハイフンで繋がれます
- * @return uaString
+ * UA情報を取得します
  */
 const GetUaData = (): UaType => {
   const parser = new UAParser()
@@ -24,7 +23,7 @@ const GetUaData = (): UaType => {
     browserEngine: browserEngine ? browserEngine.toLowerCase().replace(' ', '-') : '',
     osName: osName ? osName.toLowerCase().replace(' ', '-') : '',
     type: typeof type !== 'undefined' ? type.toLowerCase().replace(' ', '-') : 'laptop',
-    touchSupport: GetTouchSupport()
+    touchSupport: IsTouchSupport()
   }
 
   return uaString
