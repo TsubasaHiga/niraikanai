@@ -1,13 +1,17 @@
+import './styles/style.scss'
+import 'focus-visible'
+
 import { debounce, throttle } from 'throttle-debounce'
 
+import { elements } from '~/const/elements'
 import AddAnimationClass from '~/modules/AddAnimationClass'
 import AddUaData from '~/modules/AddUaData'
 import DetailsToggle from '~/modules/DetailsToggle'
 import HmbMenu from '~/modules/HmbMenu'
 import Linker from '~/modules/Linker'
+import SetOrientation from '~/modules/SetOrientation'
 import GetDocumentH from '~/utils/getDocumentHeight'
 import Set100vh from '~/utils/set100vh'
-import SetOrientation from '~/utils/setOrientation'
 
 const onDOMContentLoaded = () => {
   // AddUaData
@@ -44,12 +48,14 @@ const onLoad = () => {
 
 const onScroll = () => {
   const y = Math.round(window.scrollY || window.pageYOffset)
+  const footerH = elements.FOOTER ? elements.FOOTER.clientHeight : 0
+  const footerPosY = GetDocumentH() - footerH
 
   // add className is-scroll
   y > 0 ? document.documentElement.classList.add('is-scroll') : document.documentElement.classList.remove('is-scroll')
 
   // add className is-footer
-  GetDocumentH() <= y
+  footerPosY <= y
     ? document.documentElement.classList.add('is-footer')
     : document.documentElement.classList.remove('is-footer')
 }

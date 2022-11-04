@@ -2,11 +2,11 @@
 
 @use "sass:map";
 @use "sass:math";
-@use "../Foundation/variables" as *;
-@use "../Foundation/mixin" as *;
-@use "../Foundation/functions" as *;
+@use "../../Foundation/variables" as *;
+@use "../../Foundation/mixin" as *;
+@use "../../Foundation/functions" as *;
 
-.home {
+.top {
   /* stylelint-disable */
   // 使用する最に stylelint-disableコメント削除
   /* stylelint-enable */

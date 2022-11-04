@@ -1,5 +1,8 @@
 import GetUaData from './getUaData'
 
+/**
+ * Safariかどうかを判定します
+ */
 const IsSafari = (includeMobileSafari = true): boolean => {
   const clientData = GetUaData()
 

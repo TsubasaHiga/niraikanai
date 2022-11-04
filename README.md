@@ -2,6 +2,10 @@
 
 Niraikanai（ニライカナイ）はVite + Vanilla JSで静的サイトを構築する事を想定したボイラープレートです。
 
+- 構成：Vanilla JS
+- ビルドツール：Vite
+- Node.js：`>=16.15.0`
+
 ## Feature
 
 - 各種リンター及びフォーマッター（eslint,stylelint,prettier）の標準インストール
@@ -9,21 +13,50 @@ Niraikanai（ニライカナイ）はVite + Vanilla JSで静的サイトを構�
 - MPA対応
 - PostCSSプラグイン採用
 - Vanilla JS
-- `tsx-dom`を使用したJSX風な記述可
 - `vite-plugin-handlebars`をインストール済みなのでhtmlにてHandlebarsの記述可
 
-## Scripts
+## 動作確認環境
 
 ``` bash
-# install
+# macOS
+$ sw_vers
+ProductName:    macOS
+ProductVersion: 12.5
+BuildVersion:   21G72
+
+$ node -v
+v16.15.0
+
+$ yarn -v
+1.22.0
+
+# Windows OS
+$ ver
+Microsoft Windows [Version 10.0.22622.590]
+
+$ node -v
+v16.15.0
+
+$ yarn -v
+1.22.18
+```
+
+## 始め方
+
+### インストール
+
+``` bash
 yarn install
+```
 
-# dev
+### 開発
+
+``` bash
 yarn dev
+```
 
-# build
+### ビルド
+
+``` bash
 yarn build
-
-# build & export zip
-yarn archive
 ```
