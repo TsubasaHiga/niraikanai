@@ -80,7 +80,7 @@
     "path": "^0.12.7",
     "postcss": "^8.4.18",
     "prettier": "^2.7.1",
-    "sass": "^1.56.0",
+    "sass": "^1.58.0",
     "stylelint": "^14.14.1",
     "stylelint-config-standard-scss": "^6.1.0",
     "stylelint-order": "^5.0.0",
