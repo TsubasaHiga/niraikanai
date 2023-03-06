@@ -100,7 +100,7 @@
     "is-touch-device": "^1.0.1",
     "ress": "^5.0.2",
     "throttle-debounce": "^5.0.0",
-    "ua-parser-js": "^1.0.32"
+    "ua-parser-js": "^1.0.34"
   },
   "volta": {
     "node": "16.15.0"
